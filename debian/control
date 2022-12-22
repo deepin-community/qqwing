@@ -1,0 +1,72 @@
+Source: qqwing
+Maintainer: Jackson Doak <noskcaj@ubuntu.com>
+Priority: optional
+Section: misc
+Standards-Version: 3.9.6
+Build-Depends:
+ debhelper (>= 9)
+Homepage: http://qqwing.com/
+
+Package: qqwing
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ libqqwing2v5 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: tool for generating and solving Sudoku puzzles (application)
+ Sudoku puzzle generator and solver. It offers the following features:
+  *Can solve 1000 puzzles in 1 second and generate 1000 puzzles in 25 seconds.
+  *Uses logic. Uses as many solve techniques as possible when solving
+   puzzles rather than guessing.
+  *Rates puzzles. Most generators don't give an indication of the difficulty
+   of a Sudoku puzzle. QQwing does.
+  *Can print solve instructions for any puzzle.
+  *Customizable output style, including a CSV style that is easy to
+   import into a database.
+ .
+ This package contains the cli application
+
+Package: libqqwing2v5
+Architecture: any
+Multi-Arch: same
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Conflicts: libqqwing2
+Replaces: libqqwing2
+Description: tool for generating and solving Sudoku puzzles (library)
+ Sudoku puzzle generator and solver. It offers the following features:
+  *Can solve 1000 puzzles in 1 second and generate 1000 puzzles in 25 seconds.
+  *Uses logic. Uses as many solve techniques as possible when solving
+   puzzles rather than guessing.
+  *Rates puzzles. Most generators don't give an indication of the difficulty
+   of a Sudoku puzzle. QQwing does.
+  *Can print solve instructions for any puzzle.
+  *Customizable output style, including a CSV style that is easy to
+   import into a database.
+ .
+ This package contains the shared library
+
+Package: libqqwing-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends:
+ libqqwing2v5 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: tool for generating and solving Sudoku puzzles (development)
+ Sudoku puzzle generator and solver. It offers the following features:
+  *Can solve 1000 puzzles in 1 second and generate 1000 puzzles in 25 seconds.
+  *Uses logic. Uses as many solve techniques as possible when solving
+   puzzles rather than guessing.
+  *Rates puzzles. Most generators don't give an indication of the difficulty
+   of a Sudoku puzzle. QQwing does.
+  *Can print solve instructions for any puzzle.
+  *Customizable output style, including a CSV style that is easy to
+   import into a database.
+ .
+ This contains the development headers
